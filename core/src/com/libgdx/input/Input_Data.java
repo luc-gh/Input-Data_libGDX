@@ -1,55 +1,47 @@
 package com.libgdx.input;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Input; //classe com funções de entrada de dados multi-plataforma
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.math.MathUtils;
 
 public class Input_Data extends ApplicationAdapter {
 
 	ShapeRenderer shape;
 
-	float circleX = 200f;
-	float circleY = 100f;
-	
+	float r = MathUtils.random();
+	float g = MathUtils.random();
+	float b = MathUtils.random();
+
 	@Override
 	public void create () {
 		shape = new ShapeRenderer();
+
+		Gdx.input.setInputProcessor(new InputAdapter(){
+			@Override
+			public boolean keyTyped(char key){
+				r = MathUtils.random();
+				g = MathUtils.random();
+                b = MathUtils.random();
+				return true;
+			}
+
+			@Override
+			public boolean touchDown(int x, int y, int pointer, int button){
+				r = MathUtils.random();
+				g = MathUtils.random();
+				b = MathUtils.random();
+				return true;
+			}
+		});
 	}
 
 	@Override
-	public void render () {
-
-		if(Gdx.input.isTouched()){   //verifica posição do click
-			circleX = Gdx.input.getX();
-			circleX = Gdx.input.getY();
-		}
-
-        //Se houver teclado, verifica os clicks nos botões:
-		if(Gdx.input.isKeyPressed(Input.Keys.W)){  //tecla W -> para cima
-			circleY++;
-		}
-		if(Gdx.input.isKeyPressed(Input.Keys.A)){  //tecla A -> para esquerda
-			circleX--;
-		}
-		if(Gdx.input.isKeyPressed(Input.Keys.S)){  //tecla S -> para baixo
-			circleY--;
-		}
-		if(Gdx.input.isKeyPressed(Input.Keys.D)){  //tecla D -> para direita
-			circleX++;
-		}
-
-        //cor de fundo
-        Gdx.gl.glClearColor(.25f,.25f,.25f,1);
+	public void render () {  //cor de fundo
+        Gdx.gl.glClearColor(r, g, b,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        //círculo
-        shape.begin(ShapeRenderer.ShapeType.Filled);
-        shape.setColor(.25f,.75f,.5f,1);
-        shape.circle(circleX, circleY,75);
-        shape.end();
-
 	}
 	
 	@Override
