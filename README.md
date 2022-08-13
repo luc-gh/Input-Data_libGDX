@@ -24,12 +24,12 @@ determinados pelo usuário.</p>
 </div>
 <div>
   <h3>Lógica do projeto</h3>
+  <p>
+    A entrada de dados de usuário é feita utilizando uma API de libGDX capaz de generalizar os dados obtidos em diferentes plataformas num formato 
+    único, a fim de controlar tais processos em todas as plataformas necessárias de uma só vez. Desse modo, a maneira mais simples de obter os valores
+    de entrada do usuário é pesquisar o <i>estado atual</i>.
+  </p>
   <ul>
-    <li>
-      A entrada de dados de usuário é feita utilizando uma API de libGDX capaz de generalizar os dados obtidos em diferentes plataformas num formato 
-      único, a fim de controlar tais processos em todas as plataformas necessárias de uma só vez. Desse modo, a maneira mais simples de obter os valores
-      de entrada do usuário é pesquisar o <i>estado atual</i>.
-    </li>
     <li>
       Esse processo é chamado de <i>Sondagem (Polling)</i>, cujas principais funções úteis são (para utilizar conforme a demanda em cada classe):
       <ul>
@@ -56,10 +56,14 @@ determinados pelo usuário.</p>
         </li>
       </ul>
     </li>
+  </ul>
+  <p>
+    O <b>primeiro commit</b> da código principal utiliza as algumas destas funções de entrada para detectar clicks/toques na tela, porém não todas. <br>
+    Existem muito mais funções de entrada úteis, incluindo funções que permitem obter dados de rotação do telefone e 
+    funções que permitem rastrear vários toques simultâneos.
+  </p>
+  <ul>
     <li>
-      O <b>primeiro commit</b> da código principal utiliza as algumas destas funções de entrada para detectar clicks/toques na tela, porém não todas. <br>
-      Existem muito mais funções de entrada úteis, incluindo funções que permitem obter dados de rotação do telefone e 
-      funções que permitem rastrear vários toques simultâneos.<br>
       Leia a <a href="https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/Input.html">API de libGDX</a> para obter 
       mais informações sobre isso.
     </li>
@@ -72,13 +76,13 @@ determinados pelo usuário.</p>
       (para usar todos os eventos possíveis) ou estender <code>[extends]</code> a classe InputAdapter (para usar apenas alguns eventos) e 
       então chamar a função <code>Gdx.input.setInputProcessor()</code> com seu manipulador de eventos.
     </li>
-    <li>
-      O código do segundo commit do arquivo principal cria uma nova instância da classe <code>InputAdapter</code> com as funções 
-      <code>keyTyped()</code> e <code>touchDown()</code> para gerar valores aleatórios para as variáveis <code>r</code>, <code>g</code> 
-      e <code>b</code>, que representam os tons das cores Vermelho, Verde e Azul que serão atribuídas ao plano de fundo na função 
-      <code>render()</code>. Com isso, ao tocar/clicar na tela, ela ganhará uma nova cor de fundo.
-    </li>
   </ul>
+  <p>
+    O código do <b>segundo commit</b> do arquivo principal cria uma nova instância da classe <code>InputAdapter</code> com as funções 
+    <code>keyTyped()</code> e <code>touchDown()</code> para gerar valores aleatórios para as variáveis <code>r</code>, <code>g</code> 
+    e <code>b</code>, que representam os tons das cores Vermelho, Verde e Azul que serão atribuídas ao plano de fundo na função 
+    <code>render()</code>. Com isso, ao tocar/clicar na tela, ela ganhará uma nova cor de fundo.
+  </p>
   <ul>
     <li>
       Ressalta-se também que libGDX também contém funções para obter eventos específicos para dispositivos móveis. Confira estes guias:
