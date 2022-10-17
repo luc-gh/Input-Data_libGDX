@@ -2,7 +2,7 @@
 <p>Este repositório possui arquivos que apresentam algumas funções usadas pelo framework libGDX, com Java, para entrada de dados e comandos
 determinados pelo usuário.</p>
 <h2></h2>
-<h3>Tabela de commits</h3>
+<h3 align="center">Tabela de commits</h3>
 <div>
   <table align="center">
     <thead><th colspan="2">Modificações no arquivo <code>Input_Data.java</code> por commit</th></thead>
