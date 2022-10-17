@@ -9,14 +9,14 @@ determinados pelo usuário.</p>
     <tr>
       <td>
         <a href="https://github.com/luc-gh/Input-Data_libGDX/blob/9dda6ca8139f4c571bac3a8bb091fe12bad67162/core/src/com/libgdx/input/Input_Data.java">
-        <b>Commit 1 — Movimento de um círculo</b></a>
+        <b>Movimento de um círculo</b></a>
       </td>
       <td>Código que usa algumas funções de entrada (teclado/clicks/toques) para mover círculo.</td>
     </tr>
     <tr>
       <td>
         <a href="https://github.com/luc-gh/Input-Data_libGDX/blob/main/core/src/com/libgdx/input/Input_Data.java">
-        <b>Commit 2 — Plano de fundo</b></a>
+        <b>Plano de fundo</b></a>
       </td>
       <td>Código que usa outras funções de entrada (clicks/toques) para mudar a cor do plano de fundo.</td>
     </tr>
